@@ -24,6 +24,7 @@ public:
 		COMMAND_ID_HANDLER(IDC_BUTTON_COPY_ALL, OnCopyAll)
 		COMMAND_ID_HANDLER(ID_COPYREADERNAME, OnCopyReader)
 		COMMAND_ID_HANDLER(ID_COPYATR, OnCopyATR)
+		COMMAND_ID_HANDLER(ID_SEARCH, OnSearchATR)
 		NOTIFY_HANDLER(IDC_MAIN_LIST, NM_RCLICK, OnNMRclickMainList)
 		MESSAGE_HANDLER(WM_TIMER, OnTimer)
 		CHAIN_MSG_MAP(CDialogResize<CMainDlg>)
@@ -66,6 +67,7 @@ public:
 	LRESULT OnCopyAll(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/);
 	LRESULT OnCopyReader(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/);
 	LRESULT OnCopyATR(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/);
+	LRESULT OnSearchATR(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/);
 
 	void CloseDialog(int nVal);
 	LRESULT OnClose(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/);

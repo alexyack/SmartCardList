@@ -66,6 +66,7 @@ BEGIN
     BEGIN
         MENUITEM "Copy Reader Name",            ID_COPYREADERNAME
         MENUITEM "Copy ATR",                    ID_COPYATR
+		MENUITEM "Search ATR in Smart card ATR List", ID_SEARCH
     END
 END
 

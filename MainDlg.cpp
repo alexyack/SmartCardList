@@ -122,7 +122,7 @@ LRESULT CMainDlg::OnRefresh(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/
 
 LRESULT CMainDlg::OnCopyAll(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
-	WTL::CString strData, strItem, strAtr, strReader;
+	_CSTRING_NS::CString strData, strItem, strAtr, strReader;
 	int nIndex, nCount;
 
 	nCount = m_ctlList.GetItemCount();
@@ -155,7 +155,7 @@ void CMainDlg::DoRefresh()
 	DWORD cchReaders, nIndex, nCount;
 	DWORD dwProtocol, nATRIndex;
 	int nIndexOld;
-	WTL::CString strData;
+	_CSTRING_NS::CString strData;
 	
 	nIndexOld = m_ctlList.GetSelectedIndex();
 	m_ctlList.GetItemText(nIndexOld, 0, strData);
@@ -299,26 +299,35 @@ LRESULT CMainDlg::OnNMRclickMainList(int /*idCtrl*/, LPNMHDR pNMHDR, BOOL& /*bHa
 
 LRESULT CMainDlg::OnCopyReader(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
-	WTL::CString strData;
+	_CSTRING_NS::CString strData;
 
 	m_ctlList.GetItemText(m_nActiveRow, 0, strData);
 
-	CopyToClipboard(strData.LockBuffer());
-
-	strData.UnlockBuffer();
+	CopyToClipboard(strData.GetString());
 
 	return 0;
 }
 
 LRESULT CMainDlg::OnCopyATR(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
-	WTL::CString strData;
+	_CSTRING_NS::CString strData;
 
 	m_ctlList.GetItemText(m_nActiveRow, 2, strData);
 
-	CopyToClipboard(strData.LockBuffer());
+	CopyToClipboard(strData.GetString());
 
-	strData.UnlockBuffer();
+	return 0;
+}
+
+LRESULT CMainDlg::OnSearchATR(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
+{
+	_CSTRING_NS::CString strData, strURL;
+
+	m_ctlList.GetItemText(m_nActiveRow, 2, strData);
+
+	strURL.Format(TEXT("https://smartcard-atr.appspot.com/parse?ATR=%s"), strData);
+
+	ShellExecute(0, 0, strURL.GetString(), 0, 0, SW_SHOW);
 
 	return 0;
 }
