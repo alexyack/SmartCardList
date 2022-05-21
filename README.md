@@ -4,4 +4,4 @@ Simple SmartCard monitiring tool. Lists all smart card readers presented to syst
 
 Slots with the cards are displaying ATR of inserted card.
 
-Use context meny to copy reader name or ATR string.
+Use context menu to copy reader name or ATR string.
