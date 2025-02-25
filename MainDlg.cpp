@@ -325,7 +325,7 @@ LRESULT CMainDlg::OnSearchATR(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl
 
 	m_ctlList.GetItemText(m_nActiveRow, 2, strData);
 
-	strURL.Format(TEXT("https://smartcard-atr.appspot.com/parse?ATR=%s"), strData);
+	strURL.Format(TEXT("https://smartcard-atr.apdu.fr/parse?ATR=%s"), strData);
 
 	ShellExecute(0, 0, strURL.GetString(), 0, 0, SW_SHOW);
 

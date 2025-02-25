@@ -7,7 +7,6 @@
 
 #include <atlddx.h>
 #include <atlctrls.h>
-#include <atlddx.h>
 #include <atlsync.h>
 
 class CMainDlg : public CDialogImpl<CMainDlg>, 
