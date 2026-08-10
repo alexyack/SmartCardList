@@ -8,4 +8,4 @@ Slots with the cards are displaying ATR of inserted card.
 
 Use context menu to copy reader name or ATR string.
 
-Search for ATR redirects to [Ludovic Rousseau](https://www.linkedin.com/in/ludovicrousseau/)'s web-database.
+Search for ATR redirects to [Ludovic Rousseau](https://www.linkedin.com/in/ludovicrousseau/)'s [Smart card ATR parsing](https://smartcard-atr.apdu.fr/) site.
