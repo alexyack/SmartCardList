@@ -17,19 +17,19 @@
 
 #define OLD_ATL_CRITSEC_CODE
 
-#include <atlbase.h>
-#include <atlapp.h>
+#include "include\atlbase.h"
+#include "include\atlapp.h"
 
 extern CAppModule _Module;
 
-#include <atlmisc.h>
-#include <atlcom.h>
-#include <atlhost.h>
-#include <atlwin.h>
+#include "include\atlmisc.h"
+#include "include\atlcom.h"
+#include "include\atlhost.h"
+#include "include\atlwin.h"
 
-#include <atlframe.h>
-#include <atlctrls.h>
-#include <atldlgs.h>
+#include "include\atlframe.h"
+#include "include\atlctrls.h"
+#include "include\atldlgs.h"
 
 #if defined _M_IX86
   #pragma comment(linker, "/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='x86' publicKeyToken='6595b64144ccf1df' language='*'\"")
